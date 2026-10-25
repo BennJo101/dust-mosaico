@@ -1,0 +1,6 @@
+pyserial>=3.5
+numpy>=1.24
+# speech to text: either this, or a whisper.cpp server (--stt whispercpp)
+faster-whisper>=1.0
+# optional offline voice (--piper-model)
+# piper-tts>=1.2

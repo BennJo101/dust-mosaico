@@ -1,0 +1,27 @@
+menu "Dust bridge"
+
+    config BRIDGE_CHANNEL
+        int "Wi-Fi channel the wall talks on (same as CONFIG_DUST_CHANNEL on the tiles)"
+        range 1 13
+        default 6
+
+    choice BRIDGE_LINK
+        prompt "Link to the Jetson"
+        default BRIDGE_LINK_UART
+        help
+            UART0 works on every ESP32 dev board (through its USB-to-serial chip). Boards with
+            native USB (ESP32-S3, C3, C6, ...) can use the USB Serial/JTAG port instead.
+
+        config BRIDGE_LINK_UART
+            bool "UART0 (USB-to-serial chip)"
+        config BRIDGE_LINK_USB_JTAG
+            bool "USB Serial/JTAG (native USB)"
+            depends on SOC_USB_SERIAL_JTAG_SUPPORTED
+    endchoice
+
+    config BRIDGE_BAUD
+        int "UART baud rate"
+        depends on BRIDGE_LINK_UART
+        default 921600
+
+endmenu

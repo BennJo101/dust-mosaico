@@ -1,0 +1,20 @@
+build/
+managed_components/
+components/gen_bmgr_codes/
+sdkconfig
+sdkconfig.old
+host/dust_host
+host/out/
+host/topo_test
+host/net_test
+host/*.exe
+bridge/build/
+bridge/sdkconfig
+bridge/sdkconfig.old
+__pycache__/
+*.pyc
+# made with your ElevenLabs key: tools/make_clips.py
+clips/
+
+# a downloaded ElevenLabs voice preview, not part of the project
+voice_preview_*.mp3

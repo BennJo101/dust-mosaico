@@ -1,0 +1,49 @@
+menu "Dust mosaic"
+
+    config DUST_SLOT
+        int "This screen's place in the wall (0 = choose on screen)"
+        range 0 9
+        default 0
+        help
+            1-9, left to right, top to bottom. Leave at 0 to pick it on the screen at first boot
+            (tap for the next number, hold to save) or later with the console command "slot N".
+
+    config DUST_CHANNEL
+        int "Wi-Fi channel the wall talks on"
+        range 1 13
+        default 6
+
+    config DUST_GAP_PX
+        int "Gap between neighbouring screens' active areas, in pixels"
+        range 0 300
+        default 148
+        help
+            Distance between the lit areas of two neighbouring screens, in pixels. The panel is
+            480 px across 38.8 mm, so 1 mm is about 12.4 px. With the magnetic sleeves in
+            hardware/ that's 2 sleeve walls (2 mm) + 2 fit clearances (0.4 mm) + 2 screen bezels:
+            with 3.6 mm bezels, 12 mm, about 148 px.
+
+    config DUST_WALL_EARS
+        int "How many tiles on the wall listen for the wake word at once"
+        range 1 9
+        default 9
+        help
+            Listening costs each tile some CPU. All nine listening gives the best sense of where
+            the speaker is standing; fewer leaves more CPU for drawing. The wall picks the
+            centre and corners first and spares the leader when it can. Tiles drawing below
+            10 fps stop listening on their own. Lifted tiles always listen for themselves.
+
+    config DUST_WAKE_WORD
+        string "Wake word model (esp-sr WakeNet name filter)"
+        default "hiesp"
+        help
+            Part of the WakeNet model name to look for in the model partition: "hiesp" for
+            "Hi ESP" (CONFIG_SR_WN_WN9_HIESP). Choose the model itself under ESP Speech
+            Recognition in menuconfig. A custom "Hey Dust" needs Espressif's wake word training.
+
+    config DUST_SPEAKER_VOLUME
+        int "Speaker volume"
+        range 0 100
+        default 70
+
+endmenu

@@ -1,0 +1,9 @@
+dependencies:
+  idf: ">=6.2"
+  # Espressif's official ESP-Mosaico board support package (display, touch, IMU, magnetometers, power, motor, audio, battery).
+  esp-mosaico-bsp:
+    git: https://github.com/esp-mosaico/esp-mosaico-bsp.git
+    path: components/esp-mosaico-bsp
+    version: main
+  # Wake word, voice activity and offline commands (ships libraries for the esp32s31).
+  espressif/esp-sr: "^2.4.7"
