@@ -4,6 +4,12 @@ Nine ESP-Mosaico screens in a 3×3 wall show one Dust. Lift a screen off the wal
 shudders, a ninth of his dust tears away through that slot, and the lifted screen fills with
 a ball of dust you can carry. Put it back and the dust flows home.
 
+<p align="center">
+  <img src="docs/images/dust_wall.png" height="300" alt="Dust standing across all nine screens of the 3x3 wall">
+  <img src="docs/images/dust_lifted.png" height="300" alt="One screen lifted off the wall, carrying a ball of Dust's dust while the rest of him bends around the gap">
+  <img src="docs/images/dust_ring.png" height="300" alt="Dust poured into a ring that spans the wall">
+</p>
+
 Dust behaves like liquid in a container. When screens are missing, powered off or in a hand,
 he keeps his volume (minus the ninths that left), stretches to fill the screens that are
 there, and bends out of every gap instead of standing behind it. Your AI can also pour him
